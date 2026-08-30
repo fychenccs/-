@@ -1,0 +1,17 @@
+# Quartz 4.5 的实际构建忽略项同步配置在 quartz.config.ts 的 ignorePatterns 中。
+# 此文件保留同一份规则，供同步、迁移和其他兼容 .quartzignore 的工具使用。
+
+.obsidian/
+**/.obsidian/**
+.trash/
+**/.trash/**
+.stfolder/
+**/.stfolder/**
+private/
+Private/
+_Private/
+**/*.private.*
+**/*.tmp
+**/*.temp
+**/*.bak
+**/~$*
