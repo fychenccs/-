@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "zh-CN",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "maple-notes-one.vercel.app",
     ignorePatterns: [
       "private",
       "Private",
