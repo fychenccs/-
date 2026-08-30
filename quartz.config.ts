@@ -107,8 +107,9 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Vercel 构建无需逐页生成 OG 图片；禁用可避免 sharp 原生处理导致云端失败。
+      // 如以后需要自动社交分享图，并确认部署环境支持 sharp，可重新启用：
+      // Plugin.CustomOgImages(),
     ],
   },
 }

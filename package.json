@@ -13,6 +13,7 @@
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
+    "build": "node ./quartz/bootstrap-cli.mjs build",
     "sync": "node ./scripts/sync-obsidian.mjs",
     "dev": "npm run sync && npx quartz build --serve",
     "deploy": "npm run sync && npx quartz build && git status --short && echo Review changes, then commit and push when ready.",
@@ -22,9 +23,14 @@
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1"
   },
+  "allowScripts": {
+    "@parcel/watcher@2.5.4": true,
+    "esbuild@0.27.2": true,
+    "sharp@0.34.5": true
+  },
   "engines": {
     "npm": ">=10.9.2",
-    "node": ">=22"
+    "node": "22.x"
   },
   "keywords": [
     "site generator",
