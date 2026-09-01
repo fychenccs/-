@@ -1,0 +1,156 @@
+@use "../../styles/variables.scss" as *;
+
+.note-properties {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 1rem 0 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--lightgray) 22%, var(--light));
+  font-size: 0.9rem;
+
+  &[open] > .note-properties-summary::before {
+    transform: rotate(90deg);
+  }
+}
+
+.note-properties-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.55rem 0.75rem;
+  color: var(--darkgray);
+  font-weight: $semiBoldWeight;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: "▸";
+    flex: 0 0 auto;
+    color: var(--gray);
+    transform-origin: center;
+    transition: transform 120ms ease;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: -2px;
+  }
+}
+
+.note-properties-count {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0.05rem 0.38rem;
+  border-radius: 999px;
+  background: var(--highlight);
+  color: var(--gray);
+  font-size: 0.72rem;
+  font-weight: $normalWeight;
+  line-height: 1.4;
+}
+
+.note-properties-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0 0.75rem 0.65rem;
+}
+
+.note-property {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 0.28fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.35rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--lightgray) 72%, transparent);
+
+  dt,
+  dd {
+    min-width: 0;
+    margin: 0;
+  }
+
+  dt {
+    color: var(--gray);
+    font-family: var(--codeFont);
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
+
+  dd {
+    color: var(--darkgray);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+.note-property-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.note-property-chip {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.08rem 0.38rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 85%, transparent);
+  border-radius: 999px;
+  background: var(--highlight);
+  color: var(--darkgray);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.note-property-object {
+  display: inline;
+  padding: 0;
+  background: transparent;
+  color: var(--darkgray);
+  font-size: 0.78rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media all and ($mobile) {
+  .note-properties {
+    margin: 0.85rem 0 1.25rem;
+  }
+
+  .note-properties-summary {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .note-properties-list {
+    padding: 0 0.65rem 0.55rem;
+  }
+
+  .note-property {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2rem;
+    padding: 0.45rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .note-properties-summary::before {
+    transition: none;
+  }
+}
