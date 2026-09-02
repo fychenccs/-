@@ -33,13 +33,15 @@ Who do I want to be?
 寻找充实感和人生意义。
 二次精读时专注于自己的批注，成为笔记的灵感来源。
 建立源笔记，记录此原始素材的所有读书心得和独到见解。
-页码——摘录——心得体会
-中等篇幅，不宜过长
-借助学术工具[[Consensus使用指南]]
-**归档：
-1. Short
-2. One note = one idea
-3. Stored in one place
+页码——摘录——心得体会。
+中等篇幅，不宜过长。
+借助学术工具[[Consensus使用指南]]。
+
+**归档原则：
+- Short
+- One note = one idea
+- Stored in one place
+
 避免信息孤岛。
 跨学科的知识连结是必要的。真知灼见源于融会贯通各科知识。
 每个笔记凝练单一核心观点，建立原子笔记（一般是微型文章）。
@@ -49,10 +51,12 @@ Who do I want to be?
 连接多本书籍观点形成新认知，发现领域内共识与分歧。
 对比不同著作对同一命题的阐释差异，搭建个人认知图谱。
 唯有博览群书，方能明辨真伪。
-如何知道关联哪些内容？
-4. Search keywords
-5. Check the tag
-6. Browse the graph
+
+**如何知道关联哪些内容？**
+- Search keywords
+- Check the tag
+- Browse the graph
+
 不要追求十全十美，但求全力以赴。
 知识获取不是线性累积，而是通过反复联结生成新意义。
 # References
