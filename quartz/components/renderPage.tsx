@@ -263,6 +263,23 @@ export function renderPage(
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
       <body data-slug={slug}>
+        <noscript>
+          <div class="statcounter">
+            <a
+              title="Web Analytics Made Easy - Statcounter"
+              href="https://statcounter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="statcounter"
+                src="https://c.statcounter.com/13355407/0/9f7cad72/1/"
+                alt="Web Analytics Made Easy - Statcounter"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </a>
+          </div>
+        </noscript>
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}

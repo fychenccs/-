@@ -5,6 +5,25 @@ import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+
+// Persist across Quartz SPA navigation; counter.js reports the initial view itself.
+const statcounterBootstrap = `
+var sc_project = 13355407;
+var sc_invisible = 1;
+var sc_security = "9f7cad72";
+(function () {
+  var lastUrl = location.href;
+  document.addEventListener("nav", function () {
+    if (location.href === lastUrl) return;
+    lastUrl = location.href;
+    if (window._statcounter && typeof window._statcounter.record_pageview === "function") {
+      window._statcounter.record_pageview(sc_project, sc_security);
+    }
+    // If still loading, counter.js will report the current URL when it executes.
+  });
+})();
+`
+
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
@@ -85,6 +104,14 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+
+        <script data-persist dangerouslySetInnerHTML={{ __html: statcounterBootstrap }} />
+        <script
+          data-persist
+          type="text/javascript"
+          src="https://www.statcounter.com/counter/counter.js"
+          async
+        />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
